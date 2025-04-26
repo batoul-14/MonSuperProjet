@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.dir}/wsimport/client"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-WebServicemeteoService" depends="wsimport-init">
+        <property name="wsdl-WebServicemeteoService" location="xml-resources/web-service-references/WebServicemeteoService/wsdl/localhost_11714/WebProjet/WebServicemeteoService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/client" destdir="${build.generated.dir}/wsimport/client" wsdl="${wsdl-WebServicemeteoService}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:11714/WebProjet/WebServicemeteoService?wsdl" xnocompile="true">
+            <produces dir="${build.generated.dir}/wsimport/client/meteo" includes="WebServicemeteoService.java" casesensitive="no"/>
+        </wsimport>
+    </target>
+    <target name="wsimport-client-clean-WebServicemeteoService" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/client/meteo"/>
+    </target>
+    <target name="wsimport-client-WebServicemeteoService_1" depends="wsimport-init">
+        <property name="wsdl-WebServicemeteoService_1" location="xml-resources/web-service-references/WebServicemeteoService_1/wsdl/localhost_11714/WebProjet/WebServicemeteoService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/client" destdir="${build.generated.dir}/wsimport/client" wsdl="${wsdl-WebServicemeteoService_1}" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://localhost:11714/WebProjet/WebServicemeteoService?wsdl" xnocompile="true">
+            <produces dir="${build.generated.dir}/wsimport/client/meteo" includes="WebServicemeteoService_1.java" casesensitive="no"/>
+        </wsimport>
+    </target>
+    <target name="wsimport-client-clean-WebServicemeteoService_1" depends="-init-project">
+        <delete dir="${build.generated.dir}/wsimport/client/meteo"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WebServicemeteoService, wsimport-client-WebServicemeteoService_1"/>
+    <target name="wsimport-client-compile-depend" if="do.depend.true">
+        <j2seproject3:depend srcdir="${build.generated.dir}/wsimport/client" classpath="${libs.jaxws21.classpath}:${javac.classpath}" destdir="${build.classes.dir}"/>
+    </target>
+    <target name="wsimport-client-compile" depends="-pre-pre-compile, wsimport-client-compile-depend">
+        <j2seproject3:javac srcdir="${build.generated.dir}/wsimport/client" classpath="${libs.jaxws21.classpath}:${javac.classpath}" destdir="${build.classes.dir}"/>
+        <copy todir="${build.classes.dir}">
+            <fileset dir="${build.generated.dir}/wsimport/client" includes="**/*.xml"/>
+        </copy>
+    </target>
+</project>

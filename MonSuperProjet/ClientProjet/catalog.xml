@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:11714/WebApplicationprojet/WebServiceprojetService?WSDL" uri="xml-resources/web-service-references/WebServiceprojetService/wsdl/localhost_11714/WebApplicationprojet/WebServiceprojetService.wsdl"/>
+    <system systemId="http://localhost:11714/WebApplicationprojet/WebServiceprojetService?xsd=1" uri="xml-resources/web-service-references/WebServiceprojetService/wsdl/localhost_11714/WebApplicationprojet/WebServiceprojetService.xsd_1.xsd"/>
+    <system systemId="http://localhost:11714/WebProjet/WebServicemeteoService?wsdl" uri="xml-resources/web-service-references/WebServicemeteoService_1/wsdl/localhost_11714/WebProjet/WebServicemeteoService.wsdl"/>
+    <system systemId="http://localhost:11714/WebProjet/WebServicemeteoService?xsd=1" uri="xml-resources/web-service-references/WebServicemeteoService_1/wsdl/localhost_11714/WebProjet/WebServicemeteoService.xsd_1.xsd"/>
+</catalog>
